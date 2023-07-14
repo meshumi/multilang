@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'annotate', github: 'ctran/annotate_models'
-  gem 'font-awesome-sass', github: 'FortAwesome/font-awesome-sass'
+  gem 'annotate'
+  gem 'font-awesome-sass', git: 'https://github.com/FortAwesome/font-awesome-sass'
   gem 'sass-rails'
   gem 'bootstrap-sass'
   gem 'jquery-rails'
