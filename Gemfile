@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
-gemspec
-
 group :development, :test do
   gem 'annotate'
-  gem 'font-awesome-sass', git: 'https://github.com/FortAwesome/font-awesome-sass'
+  gem 'font-awesome-sass'
   gem 'sass-rails'
   gem 'bootstrap-sass'
   gem 'jquery-rails'
@@ -17,17 +15,4 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'redis'
   gem 'rails-i18n'
-end
-
-group :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
-  gem 'shoulda-matchers'
-  gem 'faker'
-  gem 'capybara'
-  gem 'poltergeist'
-  gem 'phantomjs', :require => 'phantomjs/poltergeist'
-  gem 'launchy'
-  gem 'fakeredis'
 end
