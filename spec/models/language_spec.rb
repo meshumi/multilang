@@ -21,7 +21,7 @@ describe Multilang::Language, type: :model do
     it 'will return correct order' do
       lang1  = create(:language, locale: :de, is_default: false)
       lang2  = create(:language, locale: :en, is_default: true)
-      result = described_class.sort
+      result = described_class.sort_scope
       expect(result.first).to eq(lang2)
       expect(result.last).to eq(lang1)
     end

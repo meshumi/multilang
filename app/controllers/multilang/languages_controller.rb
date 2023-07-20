@@ -2,7 +2,7 @@ class Multilang::LanguagesController < Multilang::ApplicationController
   add_breadcrumb 'Languages', :languages_path
 
   def index
-    @languages = Multilang::Language.sort.all
+    @languages = Multilang::Language.sort_scope.all
   end
 
   def new

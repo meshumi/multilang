@@ -31,7 +31,7 @@ module Multilang
     validates :image,
               presence: true, on: :create
 
-    scope :sort, -> { order('is_default desc') }
+    scope :sort_scope, -> { order('is_default desc') }
     scope :enable, -> { where(is_enable: true) }
     scope :default, -> { where(is_default: true) }
     scope :locale, -> (locales) { where(locale: locales) }
