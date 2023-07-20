@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 group :development, :test do
   gem 'annotate'
-  gem 'font-awesome-sass'
+  gem 'font-awesome-sass', '~> 5.6.1'
   gem 'sass-rails'
   gem 'bootstrap-sass'
   gem 'jquery-rails'
