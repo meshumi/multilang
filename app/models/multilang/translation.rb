@@ -27,7 +27,7 @@ module Multilang
 
     scope :language, ->(language) { where(language: language) }
 
-    def self.langs(default:, lang: nil)
+    def self.langs(default: nil, lang: nil)
       query = self.includes(:language).references(:language)
       if default != 'all'
         if lang.present?
