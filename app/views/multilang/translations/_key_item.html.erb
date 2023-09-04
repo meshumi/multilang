@@ -15,7 +15,7 @@
     <div class="table-responsive">
       <table class="table table-hover">
         <tbody>
-          <% key.translations.langs(@searcher.search.language).each do |translation| %>
+          <% key.translations.langs(default: @searcher.search.language[:default], lang: @searcher.search.language[:lang] ).each do |translation| %>
             <%= render 'multilang/translations/translation_item', translation: translation %>
           <% end %>
         </tbody>
