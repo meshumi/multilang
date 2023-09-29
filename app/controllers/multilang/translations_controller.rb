@@ -10,8 +10,7 @@ class Multilang::TranslationsController < Multilang::ApplicationController
 
   def update
     @translation = find_translation params[:id]
-    @translation.update_attributes(value:        params[:value],
-                                   is_completed: true)
+    @translation.update(value: params[:value], is_completed: true)
 
     Multilang::Export.new.run if ::Multilang.force_export
 
@@ -32,9 +31,7 @@ class Multilang::TranslationsController < Multilang::ApplicationController
 
   def save_all
     params[:translations].each do |id, value|
-      ::Multilang::Translation.find(id)
-        .update_attributes(value:        value,
-                           is_completed: true)
+      ::Multilang::Translation.find(id).update(value: value, is_completed: true)
     end
 
     Multilang::Export.new.run if ::Multilang.force_export
