@@ -26,6 +26,7 @@ module Multilang
 		}
 
     scope :language, ->(language) { where(language: language) }
+    scope :sorted_collection, -> { order(Arel.sql("CASE WHEN is_default = TRUE THEN 1 WHEN locale = 'nl' THEN 2 WHEN locale = 'de' THEN 3 WHEN locale = 'uk' THEN 4 WHEN locale = 'en' THEN 5  ELSE 6 END")) }
 
     def self.langs(default:, lang: nil)
       query = self.includes(:language).references(:language)
