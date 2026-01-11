@@ -59,9 +59,13 @@ module Multilang
                  multilang_translation_key_id: translation_key.id)
           .first
 
-        if translation.value.blank? || @force
+        if translation.value.blank?
           translation.value        = value
           translation.is_completed = false
+          translation.save!
+        elsif @force
+          translation.value        = value
+          translation.is_completed = value.present?
           translation.save!
         end
       end
