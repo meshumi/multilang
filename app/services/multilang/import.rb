@@ -57,7 +57,7 @@ module Multilang
         translation = Translation
           .where(multilang_language_id:        language.id,
                  multilang_translation_key_id: translation_key.id)
-          .first
+          .first_or_initialize
 
         if translation.value.blank?
           translation.value        = value
